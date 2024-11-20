@@ -23,9 +23,10 @@ class _homepageState extends State<homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Transpot Application'),
+        title: const Text('Transport Application'),
       ),
       body: Column(children: [
+        // ส่วนของ logo
         Container(
           color: Colors.white,
           padding: const EdgeInsets.symmetric(vertical: 7),
@@ -36,24 +37,32 @@ class _homepageState extends State<homepage> {
                 padding: const EdgeInsets.only(left: 13.0),
                 child: showlogo(),
               ),
+
+              // ส่วนของ Search Bar ชั่วคราว
               Row(
                 children: [
-                  // เพิ่ม Search Bar
                   Padding(
                     padding: const EdgeInsets.only(right: 10.0),
                     child: Container(
-                      width: 200, // กำหนดความกว้างของ Search Bar
+                      width: 170,
+                      height: 30, 
                       child: TextField(
                         decoration: InputDecoration(
                           hintText: 'ค้นหา...',
                           suffixIcon: Icon(Icons.search),
+                          contentPadding: const EdgeInsets.symmetric(
+                            vertical: 5,
+                            horizontal: 5,
+                          ),
                           border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(25),
+                            borderRadius: BorderRadius.circular(5), //
                           ),
                         ),
                       ),
                     ),
                   ),
+
+                  // ส่วยของปุ่ม Icon
                   Padding(
                     padding: const EdgeInsets.only(right: 13.0),
                     child: CircleAvatar(
@@ -89,41 +98,38 @@ class _homepageState extends State<homepage> {
             ],
           ),
         ),
-     Container(
-      color: Colors.black, // สีพื้นหลังแทบเป็นสีดำ
-      padding: const EdgeInsets.symmetric(vertical: 20), // เพิ่ม Padding
-      child: Row(
-        mainAxisAlignment:
-            MainAxisAlignment.spaceEvenly, // จัดตำแหน่งช่องว่างเท่ากัน
-        children: const [
-          // ไอเท็มในแทบ
-          Text(
-            'หน้าหลัก',
-            style: TextStyle(color: Colors.white, fontSize: 16),
+        Container(
+          color: Colors.black, // สีพื้นหลังแทบเป็นสีดำ
+          padding: const EdgeInsets.symmetric(vertical: 20), // เพิ่ม Padding
+          child: Row(
+            mainAxisAlignment:
+                MainAxisAlignment.spaceEvenly, // จัดตำแหน่งช่องว่างเท่ากัน
+            children: const [
+              // ไอเท็มในแทบ
+              Text(
+                'หน้าหลัก',
+                style: TextStyle(color: Colors.white, fontSize: 16),
+              ),
+              Text(
+                'เกี่ยวกับ',
+                style: TextStyle(color: Colors.white, fontSize: 16),
+              ),
+              Text(
+                'บริการ',
+                style: TextStyle(color: Colors.white, fontSize: 16),
+              ),
+              Text(
+                'คำแนะนำ',
+                style: TextStyle(color: Colors.white, fontSize: 16),
+              ),
+              Text(
+                'ติดต่อเรา',
+                style: TextStyle(color: Colors.white, fontSize: 16),
+              ),
+            ],
           ),
-          Text(
-            'เกี่ยวกับ',
-            style: TextStyle(color: Colors.white, fontSize: 16),
-          ),
-          Text(
-            'บริการ',
-            style: TextStyle(color: Colors.white, fontSize: 16),
-          ),
-          Text(
-            'คำแนะนำ',
-            style: TextStyle(color: Colors.white, fontSize: 16),
-          ),
-          Text(
-            'ติดต่อเรา',
-            style: TextStyle(color: Colors.white, fontSize: 16),
-          ),
-        ],
-      ),
-    )
-    
+        )
       ]),
     );
-    // แทบสีดำข้างบน
-    
   }
 }
