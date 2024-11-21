@@ -36,7 +36,7 @@ class _registerState extends State<register> {
       'email': email.text,
       'password': pass.text,
     });
-    var data = jsonDecode(respone.body);
+    var data = json.decode(respone.body);
     if (data == "Error") {
       Navigator.pushNamed(context, 'register');
     } else {
